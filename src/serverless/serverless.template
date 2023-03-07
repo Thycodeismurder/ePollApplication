@@ -9,14 +9,24 @@
         "Architectures": [
           "x86_64"
         ],
-        "Handler": "ePollApplication::ePollApplication.Functions::Get",
+        "Handler": "ePollApplication::ePollApplication.Functions::GetAsync",
         "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,
         "Timeout": 30,
         "Role": null,
         "Policies": [
-          "AWSLambdaBasicExecutionRole"
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Version": "2023-03-07",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [ "dynamodb:Scan" ],
+                "Recource": { "Fn::GetAtt": [ "pollsDynamoDBTable", "Arn" ] }
+              }
+            ]
+          }
         ],
         "Events": {
           "RootGet": {
@@ -50,13 +60,6 @@
             "Properties": {
               "Path": "/polls/{id}",
               "Method": "GET"
-              "Request": {
-                "Parameters": {
-                  "Paths": {
-                    "id": true
-                  }
-                }
-              }
             }
           }
         }
@@ -111,6 +114,40 @@
               "Method": "POST"
             }
           }
+        }
+      }
+    },
+    "pollsDynamoDBTable": {
+      "Type": "AWS:DymamoDB::Table",
+      "Properties": {
+        "TableName": "polls",
+        "AttributeDefinitions" : [
+          {
+            "AttributeName": "Id",
+            "AttributeType": "N"
+          },
+          {
+            "AttributeName": "Title",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "options",
+            "AttributeType": "L"
+          }
+        ],
+        "KeySchema" : [
+          {
+            "AttributeName": "Id",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName" : "Title",
+            "KeyType" : "RANGE"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits" : "1",
+          "WriteCapacityUnits": "1"
         }
       }
     }
