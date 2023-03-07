@@ -1,0 +1,7 @@
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\ePollApplication.deps.json
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\ePollApplication.runtimeconfig.json
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\ePollApplication.pdb
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\Amazon.Lambda.APIGatewayEvents.dll
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\Amazon.Lambda.Core.dll
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Users\cotokurwajest\Desktop\projektit\evitec\ePollApplication\src\serverless\bin\Release\net6.0\publish\ePollApplication.dll

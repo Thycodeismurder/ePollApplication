@@ -1,0 +1,64 @@
+{
+    "Id": {
+      "N": "0"
+    },
+    "Title": {
+      "S": "Is this a cool question?"
+    },
+    "Options": {
+      "L": [
+        {
+          "M": {
+            "Id": {
+              "N": "0"
+            },
+            "Title": {
+              "S": "Yes"
+            },
+            "Votes": {
+              "N": "0"
+            }
+          }
+        },
+        {
+          "M": {
+            "Id": {
+              "N": "0"
+            },
+            "Title": {
+              "S": "No"
+            },
+            "Votes": {
+              "N": "0"
+            }
+          }
+        },
+        {
+          "M": {
+            "Id": {
+              "N": "0"
+            },
+            "Title": {
+              "S": "Cool, another option"
+            },
+            "Votes": {
+              "N": "0"
+            }
+          }
+        },
+        {
+          "M": {
+            "Id": {
+              "N": "0"
+            },
+            "Title": {
+              "S": "Cool, another another option"
+            },
+            "Votes": {
+              "N": "0"
+            }
+          }
+        }
+      ]
+    }
+  }
