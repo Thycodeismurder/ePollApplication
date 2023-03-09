@@ -5,8 +5,8 @@ client/dist
 client/tmp
 client/out-tsc
 client/bazel-out
-/src/serverless/bin
-/src/serverless/obj
+service/serverless/bin
+service/serverless/obj
 
 # Node
 client/node_modules
@@ -31,13 +31,13 @@ client/!.vscode/extensions.json
 client/.history/*
 
 # Miscellaneous
-client//.angular/cache
+client/.angular/cache
 client/.sass-cache/
-client//connect.lock
-client//coverage
-client//libpeerconnection.log
+client/connect.lock
+client/coverage
+client/libpeerconnection.log
 client/testem.log
-client//typings
+client/typings
 
 # System files
 client/.DS_Store

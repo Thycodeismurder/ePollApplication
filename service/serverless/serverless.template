@@ -22,8 +22,15 @@
             "Statement": [
               {
                 "Effect": "Allow",
-                "Action": [ "dynamodb:Scan" ],
-                "Resource": { "Fn::GetAtt": [ "pollsDynamoDBTable", "Arn" ] }
+                "Action": [
+                  "dynamodb:Query"
+                ],
+                "Resource": {
+                  "Fn::GetAtt": [
+                    "pollsDynamoDBTable",
+                    "Arn"
+                  ]
+                }
               }
             ]
           }
@@ -121,7 +128,7 @@
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
         "TableName": "polls",
-        "AttributeDefinitions" : [
+        "AttributeDefinitions": [
           {
             "AttributeName": "Id",
             "AttributeType": "N"
@@ -131,18 +138,18 @@
             "AttributeType": "S"
           }
         ],
-        "KeySchema" : [
+        "KeySchema": [
           {
             "AttributeName": "Id",
             "KeyType": "HASH"
           },
           {
-            "AttributeName" : "Title",
-            "KeyType" : "RANGE"
+            "AttributeName": "Title",
+            "KeyType": "RANGE"
           }
         ],
         "ProvisionedThroughput": {
-          "ReadCapacityUnits" : "1",
+          "ReadCapacityUnits": "1",
           "WriteCapacityUnits": "1"
         }
       }
