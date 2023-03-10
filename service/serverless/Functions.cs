@@ -67,22 +67,31 @@ public class Functions
         Document document = Document.FromAttributeMap(response.Attributes);
         return document.ToJsonPretty();
     }
-    private async Task<string> CreatePollAsync()
+    private async Task<string> CreatePollAsync(Poll pollItems)
     {
         using var client = new AmazonDynamoDBClient(Amazon.RegionEndpoint.EUWest1);
         string tableName = "Polls";
+        var pollOptionItems = new List<AttributeValue>();
+        for (int i = 0; i < pollItems?.Options?.Count; i++)
+        {
+            pollOptionItems.Add(
+                new AttributeValue { M = new Dictionary<string, AttributeValue>() { { "Id", new AttributeValue { N = pollItems.Options[i]?.Id?["Id"] } } } }
+            );
+            pollOptionItems.Add(
+                new AttributeValue { M = new Dictionary<string, AttributeValue>() { { "Title", new AttributeValue { N = pollItems.Options[i]?.Title?["Title"] } } } }
+            );
+            pollOptionItems.Add(
+                new AttributeValue { M = new Dictionary<string, AttributeValue>() { { "Votes", new AttributeValue { N = pollItems.Options[i]?.Votes?["Votes"] } } } }
+            );
+        }
         var request = new PutItemRequest
         {
             TableName = tableName,
             Item = new Dictionary<string, AttributeValue>() {
-                {"PollId", new AttributeValue {N= "2"}},
+                {"PollId", new AttributeValue {N= pollItems?["PollId"]}},
                 {"Id", new AttributeValue { N = "0"}},
-                {"Title", new AttributeValue { S = "Paras kysymys"}},
-                {"Options", new AttributeValue { L = new List<AttributeValue>() {
-                    new AttributeValue {M = new Dictionary<string, AttributeValue>() {{"Id", new AttributeValue {N= "0"}}} },
-                    new AttributeValue {M = new Dictionary<string, AttributeValue>() {{"Title", new AttributeValue {S= "hiphei"}}} },
-                    new AttributeValue {M = new Dictionary<string, AttributeValue>() {{"Votes", new AttributeValue {N= "0"}}} }
-                }   }},
+                {"Title", new AttributeValue { S = pollItems?["Title"]}},
+                {"Options", new AttributeValue { L = pollOptionItems   }},
             }
         };
         var response = await client.PutItemAsync(request);
@@ -144,14 +153,37 @@ public class Functions
     public async Task<APIGatewayProxyResponse> CreatePoll(APIGatewayProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("create Poll Request\n");
+        context.Logger.LogInformation(request.Body.ToString());
+        context.Logger.LogInformation("body deserialisoituna");
+
+        Document document = Document.FromJson(request.Body);
+        context.Logger.LogInformation(document.ToJsonPretty());
+
+        var poll = Document.FromJson(request.Body) as Poll;
+
+        context.Logger.LogInformation(poll?.ToString());
 
         var response = new APIGatewayProxyResponse
         {
-            StatusCode = (int)HttpStatusCode.OK,
-            Body = await CreatePollAsync(),
+            StatusCode = poll != null ? (int)HttpStatusCode.OK : (int)HttpStatusCode.BadRequest,
+            Body = poll != null ? await CreatePollAsync(poll) : "Bad Request Body",
             Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
         };
 
         return response;
+    }
+
+    public class Poll : Document
+    {
+        public Dictionary<string, string>? PollId { get; set; }
+        public Dictionary<string, string>? Id { get; set; }
+        public Dictionary<string, string>? Title { get; set; }
+        public List<PollOption>? Options { get; set; }
+    }
+    public class PollOption
+    {
+        public Dictionary<string, string>? Id { get; set; }
+        public Dictionary<string, string>? Title { get; set; }
+        public Dictionary<string, string>? Votes { get; set; }
     }
 }
