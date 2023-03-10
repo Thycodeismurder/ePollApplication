@@ -59,7 +59,24 @@
         "Timeout": 30,
         "Role": null,
         "Policies": [
-          "AWSLambdaBasicExecutionRole"
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:Query"
+                ],
+                "Resource": {
+                  "Fn::GetAtt": [
+                    "pollsDynamoDBTable",
+                    "Arn"
+                  ]
+                }
+              }
+            ]
+          }
         ],
         "Events": {
           "RootGet": {
@@ -85,7 +102,24 @@
         "Timeout": 30,
         "Role": null,
         "Policies": [
-          "AWSLambdaBasicExecutionRole"
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:Update*"
+                ],
+                "Resource": {
+                  "Fn::GetAtt": [
+                    "pollsDynamoDBTable",
+                    "Arn"
+                  ]
+                }
+              }
+            ]
+          }
         ],
         "Events": {
           "RootPut": {
@@ -111,7 +145,24 @@
         "Timeout": 30,
         "Role": null,
         "Policies": [
-          "AWSLambdaBasicExecutionRole"
+          "AWSLambdaBasicExecutionRole",
+          {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "dynamodb:PutItem"
+                ],
+                "Resource": {
+                  "Fn::GetAtt": [
+                    "pollsDynamoDBTable",
+                    "Arn"
+                  ]
+                }
+              }
+            ]
+          }
         ],
         "Events": {
           "RootPut": {
@@ -127,15 +178,15 @@
     "pollsDynamoDBTable": {
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
-        "TableName": "polls",
+        "TableName": "Polls",
         "AttributeDefinitions": [
           {
             "AttributeName": "Id",
             "AttributeType": "N"
           },
           {
-            "AttributeName": "Title",
-            "AttributeType": "S"
+            "AttributeName": "PollId",
+            "AttributeType": "N"
           }
         ],
         "KeySchema": [
@@ -144,7 +195,7 @@
             "KeyType": "HASH"
           },
           {
-            "AttributeName": "Title",
+            "AttributeName": "PollId",
             "KeyType": "RANGE"
           }
         ],
