@@ -1,0 +1,8 @@
+.mat-card {
+    background-color: linen;
+    margin: 10px;
+}        
+        .mat-card-content-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }

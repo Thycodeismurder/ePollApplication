@@ -1,0 +1,23 @@
+<mat-card class="mat-card">
+  <mat-card-header>
+    <mat-card-title> <b>Title: </b> {{ poll?.Title }} </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="mat-card-content-options" *ngFor="let option of poll?.Options">
+      <div><b> Options: </b></div>
+      <div>{{ option.Title }}</div>
+      <div>Votes:</div>
+      <div>
+        {{ option.Votes }}
+        <button
+          mat-mini-fab
+          color="primary"
+          (click)="VoteOption(option?.Id, poll?.PollId)"
+          mat-button
+        >
+          <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

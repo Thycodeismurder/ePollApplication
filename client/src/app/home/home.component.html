@@ -1,0 +1,7 @@
+<app-top-nav-bar></app-top-nav-bar>
+<div *ngFor="let pollItem of this.polls">
+  <app-poll-card
+    [poll]="pollItem"
+    (votePollOption)="PostOption($event)"
+  ></app-poll-card>
+</div>

@@ -31,6 +31,11 @@
                     "Arn"
                   ]
                 }
+              },
+              {
+                "Effect": "Allow",
+                "Action": "lambda:InvokeFunction",
+                "Resource": "*"
               }
             ]
           }
@@ -74,6 +79,11 @@
                     "Arn"
                   ]
                 }
+              },
+              {
+                "Effect": "Allow",
+                "Action": "lambda:InvokeFunction",
+                "Resource": "*"
               }
             ]
           }
@@ -117,6 +127,11 @@
                     "Arn"
                   ]
                 }
+              },
+              {
+                "Effect": "Allow",
+                "Action": "lambda:InvokeFunction",
+                "Resource": "*"
               }
             ]
           }
@@ -160,6 +175,11 @@
                     "Arn"
                   ]
                 }
+              },
+              {
+                "Effect": "Allow",
+                "Action": "lambda:InvokeFunction",
+                "Resource": "*"
               }
             ]
           }

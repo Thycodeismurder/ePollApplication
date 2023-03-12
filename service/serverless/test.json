@@ -1,586 +1,135 @@
-[
-  {
-    "Title": {
-      "B": null,
-      "BOOL": false,
-      "IsBOOLSet": false,
-      "BS": [],
-      "L": [],
-      "IsLSet": false,
-      "M": {},
-      "IsMSet": false,
-      "N": null,
-      "NS": [],
-      "NULL": false,
-      "S": "What is your favorite drink?",
-      "SS": []
-    },
-    "Id": {
-      "B": null,
-      "BOOL": false,
-      "IsBOOLSet": false,
-      "BS": [],
-      "L": [],
-      "IsLSet": false,
-      "M": {},
-      "IsMSet": false,
-      "N": "1",
-      "NS": [],
-      "NULL": false,
-      "S": null,
-      "SS": []
-    },
-    "Options": {
-      "B": null,
-      "BOOL": false,
-      "IsBOOLSet": false,
-      "BS": [],
-      "L": [
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Tea",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
-          },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        },
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Coffee",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
-          },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        },
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Cola",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
-          },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        },
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Beer",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
-          },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        }
-      ],
-      "IsLSet": true,
-      "M": {},
-      "IsMSet": false,
-      "N": null,
-      "NS": [],
-      "NULL": false,
-      "S": null,
-      "SS": []
-    }
+{
+  "Id": {
+    "N": "0"
   },
-  {
-    "Title": {
-      "B": null,
-      "BOOL": false,
-      "IsBOOLSet": false,
-      "BS": [],
-      "L": [],
-      "IsLSet": false,
-      "M": {},
-      "IsMSet": false,
-      "N": null,
-      "NS": [],
-      "NULL": false,
-      "S": "Is this a cool question?",
-      "SS": []
-    },
-    "Id": {
-      "B": null,
-      "BOOL": false,
-      "IsBOOLSet": false,
-      "BS": [],
-      "L": [],
-      "IsLSet": false,
-      "M": {},
-      "IsMSet": false,
-      "N": "0",
-      "NS": [],
-      "NULL": false,
-      "S": null,
-      "SS": []
-    },
-    "Options": {
-      "B": null,
-      "BOOL": false,
-      "IsBOOLSet": false,
-      "BS": [],
-      "L": [
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Yes",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
+  "Title": {
+    "S": "Is this a cool question?"
+  },
+  "Options": {
+    "L": [
+      {
+        "M": {
+          "Id": {
+            "N": "0"
           },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        },
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "No",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
+          "Title": {
+            "S": "Yes"
           },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        },
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Cool, another option",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
-          },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
-        },
-        {
-          "B": null,
-          "BOOL": false,
-          "IsBOOLSet": false,
-          "BS": [],
-          "L": [],
-          "IsLSet": false,
-          "M": {
-            "Title": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": null,
-              "NS": [],
-              "NULL": false,
-              "S": "Cool, another another option",
-              "SS": []
-            },
-            "Votes": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            },
-            "Id": {
-              "B": null,
-              "BOOL": false,
-              "IsBOOLSet": false,
-              "BS": [],
-              "L": [],
-              "IsLSet": false,
-              "M": {},
-              "IsMSet": false,
-              "N": "0",
-              "NS": [],
-              "NULL": false,
-              "S": null,
-              "SS": []
-            }
-          },
-          "IsMSet": true,
-          "N": null,
-          "NS": [],
-          "NULL": false,
-          "S": null,
-          "SS": []
+          "Votes": {
+            "N": "0"
+          }
         }
-      ],
-      "IsLSet": true,
-      "M": {},
-      "IsMSet": false,
-      "N": null,
-      "NS": [],
-      "NULL": false,
-      "S": null,
-      "SS": []
-    }
+      },
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "No"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      },
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "Cool, another option"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      },
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "Cool, another another option"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      }
+    ]
+  },
+  "PollId": {
+    "N": "0"
   }
-]
+}
+//first and second
+{
+  "Id": {
+    "N": "0"
+  },
+  "Title": {
+    "S": "What is your favorite drink?"
+  },
+  "Options": {
+    "L": [
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "Tea"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      },
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "Coffee"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      },
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "Cola"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      },
+      {
+        "M": {
+          "Id": {
+            "N": "0"
+          },
+          "Title": {
+            "S": "Beer"
+          },
+          "Votes": {
+            "N": "0"
+          }
+        }
+      }
+    ]
+  },
+  "PollId": {
+    "N": "1"
+  }
+}

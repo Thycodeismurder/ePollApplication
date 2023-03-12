@@ -18,6 +18,7 @@ public class Functions
     /// </summary>
     public Functions()
     {
+
     }
     private async Task<string> QueryPollsAsync()
     {
@@ -112,10 +113,15 @@ public class Functions
         {
             StatusCode = (int)HttpStatusCode.OK,
             Body = await QueryPollsAsync(),
-            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+            Headers = getHeaders()
         };
 
         return response;
+    }
+    public Dictionary<string, string> getHeaders()
+    {
+        var headers = new Dictionary<string, string> { { "Content-Type", "text/plain" }, { "Access-Control-Allow-Headers", "Content-Type" }, { "Access-Control-Allow-Origin", "*" }, { "Access-Control-Allow-Methods", "*" } };
+        return headers;
     }
     public async Task<APIGatewayProxyResponse> GetById(APIGatewayProxyRequest request, ILambdaContext context)
     {
@@ -127,7 +133,7 @@ public class Functions
         {
             StatusCode = (int)HttpStatusCode.OK,
             Body = await QueryPollByIdAsync(id),
-            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+            Headers = getHeaders()
         };
 
         return response;
@@ -145,7 +151,7 @@ public class Functions
         {
             StatusCode = (int)HttpStatusCode.OK,
             Body = await PostOptionAsync(id, optionId),
-            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+            Headers = getHeaders()
         };
 
         return response;
@@ -167,7 +173,7 @@ public class Functions
         {
             StatusCode = poll != null ? (int)HttpStatusCode.OK : (int)HttpStatusCode.BadRequest,
             Body = poll != null ? await CreatePollAsync(poll) : "Bad Request Body",
-            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+            Headers = getHeaders()
         };
 
         return response;
