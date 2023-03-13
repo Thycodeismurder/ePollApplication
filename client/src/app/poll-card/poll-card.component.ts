@@ -16,7 +16,9 @@ import { Poll } from 'src/services/pollType';
 })
 export class PollCardComponent implements OnInit, OnChanges {
   @Input() poll?: Poll;
+  @Input() showContent: boolean = false;
   @Output() votePollOption = new EventEmitter<{}>();
+  @Output() selectPollEmiter = new EventEmitter<Poll>();
 
   constructor() {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -30,5 +32,8 @@ export class PollCardComponent implements OnInit, OnChanges {
   }
   VoteOption(optionId?: number, pollId?: number) {
     this.votePollOption.emit({ optionId, pollId });
+  }
+  selectPoll() {
+    this.selectPollEmiter.emit(this.poll);
   }
 }

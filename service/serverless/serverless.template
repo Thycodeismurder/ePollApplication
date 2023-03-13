@@ -141,7 +141,7 @@
             "Type": "Api",
             "Properties": {
               "Path": "/polls/{id}/vote/{option}",
-              "Method": "PUT"
+              "Method": "POST"
             }
           }
         }

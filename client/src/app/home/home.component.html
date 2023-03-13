@@ -1,7 +1,19 @@
-<app-top-nav-bar></app-top-nav-bar>
-<div *ngFor="let pollItem of this.polls">
-  <app-poll-card
-    [poll]="pollItem"
-    (votePollOption)="PostOption($event)"
-  ></app-poll-card>
-</div>
+<mat-tab-group [(selectedIndex)]="selectedTabIndex">
+  <mat-tab label="Polls"
+    ><div *ngFor="let pollItem of this.polls">
+      <app-poll-card
+        [poll]="pollItem"
+        (votePollOption)="PostOption($event)"
+        (selectPollEmiter)="SelectPoll($event)"
+      ></app-poll-card></div
+  ></mat-tab>
+  <mat-tab label="Poll">
+    <app-poll-card
+      [poll]="selectedPoll"
+      (votePollOption)="PostOption($event)"
+      [showContent]="true"
+    >
+    </app-poll-card>
+  </mat-tab>
+  <mat-tab label="CreatePoll"> <app-create-poll></app-create-poll> </mat-tab>
+</mat-tab-group>

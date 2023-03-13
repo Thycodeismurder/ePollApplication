@@ -1,0 +1,23 @@
+<form [formGroup]="poll" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input formControlName="title" type="text" matInput placeholder="Title" />
+  </mat-form-field>
+  <button (click)="addOption()" mat-mini-fab color="primary">
+    <mat-icon>plus_one</mat-icon>
+  </button>
+  <ng-container formArrayName="options">
+    <ng-container *ngFor="let optionForm of options.controls; let i = index">
+      <div [formGroupName]="i">
+        <mat-form-field>
+          <input
+            formControlName="title"
+            type="text"
+            matInput
+            placeholder="Options Title"
+          />
+        </mat-form-field>
+      </div>
+    </ng-container>
+  </ng-container>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

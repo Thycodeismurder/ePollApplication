@@ -10,19 +10,32 @@ import { RestApiRequestsService } from 'src/services/rest-api-requests.service';
 export class HomeComponent implements OnInit {
   constructor(private apiService: RestApiRequestsService) {}
   polls: Poll[] | undefined;
+  selectedPoll: Poll | undefined;
+  selectedTabIndex = 0;
 
   ngOnInit(): void {
     this.apiService.getAll().subscribe((data: Poll[]) => {
       this.polls = data;
+      this.selectedPoll = data[0];
     });
   }
   PostOption(event: { optionId?: number; pollId?: number }) {
     const optionIdString = event.optionId?.toString();
     const pollIdString = event.pollId?.toString();
     this.apiService
-      .postOption(optionIdString, pollIdString)
+      .postOption(pollIdString, optionIdString)
       .subscribe((data) => {
-        console.log(data);
+        if (data) {
+          this.polls?.map((poll) => {
+            +pollIdString! === poll.PollId
+              ? poll.Options[+optionIdString!].Votes++
+              : null;
+          });
+        }
       });
+  }
+  SelectPoll(event: Poll) {
+    this.selectedPoll = event;
+    this.selectedTabIndex = 1;
   }
 }
