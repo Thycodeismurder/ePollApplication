@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
+import { Poll } from 'src/services/pollType';
 
 @Component({
   selector: 'app-create-poll',
@@ -7,6 +8,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./create-poll.component.scss'],
 })
 export class CreatePollComponent implements OnInit {
+  @Output() createPoll = new EventEmitter<Poll>();
   poll = this.formBuilder.group({
     title: ['', [Validators.required]],
     options: this.formBuilder.array([]),
@@ -19,10 +21,21 @@ export class CreatePollComponent implements OnInit {
   addOption() {
     const optionsForm = this.formBuilder.group({
       title: ['', [Validators.required]],
+      id: [this.options.controls.length],
+      votes: ['0'],
     });
     this.options.push(optionsForm);
   }
   onSubmit() {
-    console.log(this.poll.value);
+    if (this.poll.valid) {
+      console.log(this.poll.value);
+      const poll: Poll = {
+        Id: 0,
+        Title: this.poll.value['title']!,
+        PollId: 3,
+        Options: this.options.value,
+      };
+      this.createPoll.emit(poll);
+    }
   }
 }

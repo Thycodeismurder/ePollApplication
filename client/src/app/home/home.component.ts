@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
   selectedTabIndex = 0;
 
   ngOnInit(): void {
+    this.getAllPoll();
+  }
+  getAllPoll() {
     this.apiService.getAll().subscribe((data: Poll[]) => {
       this.polls = data;
       this.selectedPoll = data[0];
@@ -28,11 +31,19 @@ export class HomeComponent implements OnInit {
         if (data) {
           this.polls?.map((poll) => {
             +pollIdString! === poll.PollId
-              ? poll.Options[+optionIdString!].Votes++
+              ? poll.Options[+optionIdString!].votes++
               : null;
           });
         }
       });
+  }
+  CreatePoll(event: Poll) {
+    this.apiService.createPoll(event).subscribe((data) => {
+      if (data) {
+        console.log(data);
+        this.getAllPoll();
+      }
+    });
   }
   SelectPoll(event: Poll) {
     this.selectedPoll = event;

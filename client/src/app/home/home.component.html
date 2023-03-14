@@ -15,5 +15,7 @@
     >
     </app-poll-card>
   </mat-tab>
-  <mat-tab label="CreatePoll"> <app-create-poll></app-create-poll> </mat-tab>
+  <mat-tab label="CreatePoll">
+    <app-create-poll (createPoll)="CreatePoll($event)"></app-create-poll>
+  </mat-tab>
 </mat-tab-group>

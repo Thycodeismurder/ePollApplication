@@ -4,9 +4,9 @@ export type Poll = {
   PollId: number;
   Options: [
     {
-      Id: number;
-      Title: string;
-      Votes: number;
+      id: number;
+      title: string;
+      votes: number;
     }
   ];
 };

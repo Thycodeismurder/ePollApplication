@@ -10,14 +10,14 @@
   <mat-card-content *ngIf="showContent">
     <div class="mat-card-content-options" *ngFor="let option of poll?.Options">
       <div><b> Options: </b></div>
-      <div>{{ option.Title }}</div>
+      <div>{{ option.title }}</div>
       <div>Votes:</div>
       <div>
-        {{ option.Votes }}
+        {{ option.votes }}
         <button
           mat-mini-fab
           color="primary"
-          (click)="VoteOption(option?.Id, poll?.PollId)"
+          (click)="VoteOption(option?.id, poll?.PollId)"
           mat-button
         >
           <mat-icon>plus_one</mat-icon>

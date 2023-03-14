@@ -198,7 +198,7 @@
     "pollsDynamoDBTable": {
       "Type": "AWS::DynamoDB::Table",
       "Properties": {
-        "TableName": "Polls",
+        "TableName": "polls",
         "AttributeDefinitions": [
           {
             "AttributeName": "Id",
@@ -206,7 +206,7 @@
           },
           {
             "AttributeName": "PollId",
-            "AttributeType": "N"
+            "AttributeType": "S"
           }
         ],
         "KeySchema": [
