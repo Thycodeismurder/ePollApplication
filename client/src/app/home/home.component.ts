@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
       .subscribe((data) => {
         if (data) {
           this.polls?.map((poll) => {
-            +pollIdString! === poll.PollId
+            pollIdString! === poll.PollId
               ? poll.Options[+optionIdString!].votes++
               : null;
           });

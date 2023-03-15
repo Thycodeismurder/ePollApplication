@@ -78,11 +78,6 @@ public class Functions
         return document.ToJsonPretty();
     }
 
-    /// <summary>
-    /// A Lambda function to respond to HTTP Get methods from API Gateway
-    /// </summary>
-    /// <param name="request"></param>
-    /// <returns>The API Gateway response.</returns>
     public async Task<APIGatewayProxyResponse> GetAsync(APIGatewayProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("Get Request\n");

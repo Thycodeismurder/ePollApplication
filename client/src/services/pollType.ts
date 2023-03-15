@@ -1,7 +1,7 @@
 export type Poll = {
   Id: number;
   Title: string;
-  PollId: number;
+  PollId: string;
   Options: [
     {
       id: number;

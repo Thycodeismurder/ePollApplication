@@ -30,7 +30,7 @@ export class PollCardComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     console.log(this.poll);
   }
-  VoteOption(optionId?: number, pollId?: number) {
+  VoteOption(optionId?: number, pollId?: string) {
     this.votePollOption.emit({ optionId, pollId });
   }
   selectPoll() {

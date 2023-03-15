@@ -32,7 +32,7 @@ export class CreatePollComponent implements OnInit {
       const poll: Poll = {
         Id: 0,
         Title: this.poll.value['title']!,
-        PollId: 3,
+        PollId: '',
         Options: this.options.value,
       };
       this.createPoll.emit(poll);

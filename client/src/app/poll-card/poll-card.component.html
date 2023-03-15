@@ -1,5 +1,5 @@
 <mat-card class="mat-card">
-  <mat-card-header>
+  <mat-card-header class="mat-card-header">
     <mat-card-title> <b>Title: </b> {{ poll?.Title }} </mat-card-title>
     <div *ngIf="!showContent">
       <button mat-raised-button color="primary" (click)="selectPoll()">
@@ -15,6 +15,7 @@
       <div>
         {{ option.votes }}
         <button
+          class="mat-card-content-options-button"
           mat-mini-fab
           color="primary"
           (click)="VoteOption(option?.id, poll?.PollId)"

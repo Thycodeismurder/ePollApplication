@@ -1,23 +1,41 @@
-<form [formGroup]="poll" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <input formControlName="title" type="text" matInput placeholder="Title" />
-  </mat-form-field>
-  <button (click)="addOption()" mat-mini-fab color="primary">
-    <mat-icon>plus_one</mat-icon>
-  </button>
-  <ng-container formArrayName="options">
-    <ng-container *ngFor="let optionForm of options.controls; let i = index">
-      <div [formGroupName]="i">
-        <mat-form-field>
-          <input
-            formControlName="title"
-            type="text"
-            matInput
-            placeholder="Options Title"
-          />
-        </mat-form-field>
+<mat-card class="create-poll-card">
+  <mat-card-header>
+    <form
+      [formGroup]="poll"
+      (ngSubmit)="onSubmit()"
+      class="create-poll-card-form"
+    >
+      <mat-form-field>
+        <input
+          formControlName="title"
+          type="text"
+          matInput
+          placeholder="Title"
+        />
+      </mat-form-field>
+      <div class="create-poll-card-form-add-option">
+        <p>Add option:</p>
+        <button (click)="addOption()" mat-mini-fab color="primary">
+          <mat-icon>plus_one</mat-icon>
+        </button>
       </div>
-    </ng-container>
-  </ng-container>
-  <button mat-raised-button color="primary" type="submit">Submit</button>
-</form>
+      <ng-container formArrayName="options">
+        <ng-container
+          *ngFor="let optionForm of options.controls; let i = index"
+        >
+          <div [formGroupName]="i">
+            <mat-form-field>
+              <input
+                formControlName="title"
+                type="text"
+                matInput
+                placeholder="Options Title"
+              />
+            </mat-form-field>
+          </div>
+        </ng-container>
+      </ng-container>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </mat-card-header>
+</mat-card>
