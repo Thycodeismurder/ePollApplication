@@ -23,7 +23,7 @@ export class RestApiRequestsService {
   postOption(pollId?: string, optionId?: string): Observable<{}> {
     const response = this.httpClient.post(
       apiEndPoint + 'polls/' + pollId + '/vote/' + optionId,
-      ''
+      JSON.stringify('')
     );
     return response;
   }

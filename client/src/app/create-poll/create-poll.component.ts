@@ -22,7 +22,7 @@ export class CreatePollComponent implements OnInit {
     const optionsForm = this.formBuilder.group({
       title: ['', [Validators.required]],
       id: [this.options.controls.length],
-      votes: ['0'],
+      votes: [0],
     });
     this.options.push(optionsForm);
   }
